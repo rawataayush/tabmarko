@@ -8,14 +8,11 @@ const DashboardLayout = () => {
 
     return (
         <div className='min-h-screen bg-background'>
+            <Topbar />
             <Sidebar 
                 isSidebarOpen={isSidebarOpen}
                 setIsSidebarOpen={setIsSidebarOpen}
                 />
-            <Topbar 
-                isSidebarOpen={isSidebarOpen}
-                setIsSidebarOpen={setIsSidebarOpen}
-            />
             <main className={`pt-2 transition-all duration-300 ${
                 isSidebarOpen ? 'ml-20' : 'ml-0'
                 }`

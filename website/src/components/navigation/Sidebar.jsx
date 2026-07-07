@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
 
 const navItems = [
     {
@@ -77,22 +76,12 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
     return (
         <nav
-            className={`fixed left-0 top-0 z-40 flex flex-col h-screen border-r border-[#c1c6d6] bg-[#f3f4f5] px-4 py-5
+            className={`fixed left-0 top-16 z-40 flex flex-col h-full border-r border-[#c1c6d6] bg-[#f3f4f5] px-4 pt-5 pb-20
                 transition-all duration-300
                 ${isSidebarOpen ? "w-60" : "w-20"}
             `}
         >
-            <div className={`mb-8 flex items-center ${isSidebarOpen ? 'justify-between' : 'justify-center'
-                } `}
-            >
-                <div className='flex items-center overflow-hidden'>
-                    <img src={logo} alt="TabMarko" className="w-14 h-14 shrink-0" />
-                    <h1 className={`whitespace-norwrap font-bold text-3xl text-[#191c1d] translate-all duration-300
-                    isSidebarOpen ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}>
-                        <span className='text-[#191c1d]'>Tab</span>
-                        <span className='text-[#1a73e8]'>Marko</span></h1>
-                </div>
-            </div>
+            
 
             <div className="flex flex-col gap-2">
                 {navItems.map((item) => (

@@ -9,7 +9,7 @@ const Tabs = () => {
     const filteredGroups = selectedFilter === 'All' ? tabsGroup : tabsGroup.filter((group) => group.category === selectedFilter)
     
     return (
-        <main className='overflow-y-auto p-8 pb-24 ml-40 mt-16'>
+        <main className='mt-16 overflow-y-auto px-4 py-6 pb-24 md:ml-40 md:px-6 lg:px-8'>
             <div className='mx-auto max-w-7xl'>
                 <TabsHeader />
                 <FilterBar 

@@ -1,9 +1,7 @@
 const ChatInput = () => {
     return (
-        <div className='absolute inset-x-0 bottom-2  bg-linear-to-t from-white via-white to-transparent px-6 pb-1 pt-6'>
-            <div className='group relative mx-auto w-full max-w-3xl'>
-                <div className='absolute -inset-1 rounded-3xl bg-linear-to-r from-[#1A73E8] to-[#c1c6d6] opacity-20 blur transition duration-300 group-focus-within:opacity-40' />
-
+        <div className='fixed bottom-4 left-0 right-0 z-20 md:left-40 px-4 md:px-6 lg:px-8'>
+            <div className='bg-linear-to-t from-white via-white to-transparent pt-6 pb-2'>
                 <div className='relative overflow-hidden rounded-[20px] border border-[#c1c6d6] bg-white shadow-sm'>
                     <textarea
                         rows={2}

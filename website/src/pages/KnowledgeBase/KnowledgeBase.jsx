@@ -4,13 +4,15 @@ import ConversationSidebar from '../../components/knowledgeBase/ConversationSide
 
 const KnowledgeBase = () => {
     return (
-        <main className='ml-40 mt-14 flex h-[calc(100vh-64px)] overflow-hidden'>
-            <section className='relative flex flex-1 flex-col bg-white px-6 pt-15 pb-65'>
+        <main className='mt-16 flex h-[calc(100vh-64px)] overflow-hidden md:ml-40'>
+            <section className='relative flex flex-1 flex-col overflow-y-auto bg-white px-4 pt-6 pb-28 md:px-6 lg:px-8'>
                 <KnowledgeWelcome />
                 <ChatInput />
             </section>
-            <ConversationSidebar />
-</main>
+            <div className='hidden lg:block'>
+                <ConversationSidebar />
+            </div>
+        </main>
     )
 }
 
