@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
-import { useState } from 'react';
 
 const Navbar = () => {
-    const [isMenuOpen, setisMenuOpen] = useState(false);
-
     return (
         <nav className='sticky top-0 z-50 w-full border-b border-[#c1c6d6] bg-white/90 backdrop-blur-md'>
             <div className='mx-auto flex h-16 max-w-350 items-center justify-between px-6 lg:px-8'>
@@ -12,7 +9,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <Link
                     to='/'
-                    onClick={()=>
+                    onClick={() =>
                         window.scrollTo({
                             top: 0,
                             behavior: 'smooth',
@@ -56,17 +53,37 @@ const Navbar = () => {
                     </a>
                 </div>
 
-                {/* CTA Button */}
-                <Link
-                    to="/dashboard"
-                    onClick={()=> setisMenuOpen(false)}
-                    className="rounded-lg bg-[#1A73E8] px-3 py-2 text-xs font-semibold text-white transition-all hover:opacity-90 sm:px-4 sm:text-sm md:px-5 md:py-2.5 md:text-base"
-                >
-                    Open Dashboard
-                </Link>
+                {/* Actions */}
+                <div className='flex items-center gap-4'>
+                    <button
+                        type="button"
+                        className="flex h-10 w-10 items-center justify-center rounded-full transition-colors text-[#414754] hover:bg-[#e1e3e4] hover:text-[#005bbf]"
+                        onClick={() => {
+                            const isDark = document.documentElement.classList.contains('dark');
+                            if (isDark) {
+                                document.documentElement.classList.remove('dark');
+                                localStorage.setItem('tabmarko_theme', 'light');
+                            } else {
+                                document.documentElement.classList.add('dark');
+                                localStorage.setItem('tabmarko_theme', 'dark');
+                            }
+                        }}
+                        title="Toggle Theme"
+                    >
+                        <span className="material-symbols-outlined theme-icon-dark">dark_mode</span>
+                        <span className="material-symbols-outlined theme-icon-light">light_mode</span>
+                    </button>
+                    {/* CTA Button */}
+                    <Link
+                        to="/dashboard"
+                        className="rounded-lg bg-[#1A73E8] px-3 py-2 text-xs font-semibold text-white transition-all hover:opacity-90 sm:px-4 sm:text-sm md:px-5 md:py-2.5 md:text-base"
+                    >
+                        Open Dashboard
+                    </Link>
+                </div>
             </div>
         </nav >
     )
 }
 
-export default Navbar
+export default Navbar;

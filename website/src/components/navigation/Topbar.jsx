@@ -36,6 +36,29 @@ const Topbar = () => {
                 <button
                     type="button"
                     className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-[#e1e3e4] hover:text-[#005bbf]"
+                    onClick={() => {
+                        const isDark = document.documentElement.classList.contains('dark');
+                        if (isDark) {
+                            document.documentElement.classList.remove('dark');
+                            localStorage.setItem('tabmarko_theme', 'light');
+                        } else {
+                            document.documentElement.classList.add('dark');
+                            localStorage.setItem('tabmarko_theme', 'dark');
+                        }
+                    }}
+                    title="Toggle Theme"
+                >
+                    <span className="material-symbols-outlined theme-icon-dark">dark_mode</span>
+                    <span className="material-symbols-outlined theme-icon-light">light_mode</span>
+                </button>
+
+                <button
+                    type="button"
+                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-[#e1e3e4] hover:text-[#005bbf]"
+                    onClick={() => {
+                        window.postMessage({ type: 'TABMARKO_SYNC' }, '*');
+                    }}
+                    title="Sync with Extension"
                 >
                     <span className="material-symbols-outlined">refresh</span>
                 </button>

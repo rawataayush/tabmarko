@@ -1,1 +1,131 @@
 @import 'tailwindcss';
+
+html.dark {
+    color-scheme: dark;
+}
+
+html.dark body {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+html:not(.dark) .theme-icon-light {
+    display: none !important;
+}
+html.dark .theme-icon-dark {
+    display: none !important;
+}
+html.dark .theme-icon-light {
+    display: block !important;
+}
+
+html.dark .bg-\[\#fafafa\], 
+html.dark .bg-\[\#f8fafc\],
+html.dark .bg-\[\#f8f9fa\] {
+    background-color: #0f172a !important;
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/90,
+html.dark .bg-\[\#ffffff\] {
+    background-color: #1e293b !important;
+}
+
+html.dark .bg-\[\#f3f4f5\],
+html.dark .bg-\[\#e3e2e6\] {
+    background-color: #334155 !important;
+}
+
+html.dark .bg-\[\#E8F0FE\] {
+    background-color: rgba(30, 58, 138, 0.4) !important;
+}
+
+html.dark .bg-\[\#FDECEC\] {
+    background-color: rgba(127, 29, 29, 0.4) !important;
+}
+
+html.dark .bg-\[\#E8F5E9\] {
+    background-color: rgba(20, 83, 45, 0.4) !important;
+}
+
+html.dark .from-white {
+    background-image: linear-gradient(to top, #1e293b, #1e293b, transparent) !important;
+}
+
+html.dark .text-\[\#191c1d\],
+html.dark .text-gray-900 {
+    color: #f8fafc !important;
+}
+
+html.dark .text-\[\#414754\],
+html.dark .text-gray-700 {
+    color: #cbd5e1 !important;
+}
+
+html.dark .text-\[\#6b7280\],
+html.dark .text-gray-500 {
+    color: #94a3b8 !important;
+}
+
+html.dark .text-\[\#a0a4ab\],
+html.dark .text-gray-400 {
+    color: #64748b !important;
+}
+
+html.dark .text-\[\#1A73E8\] {
+    color: #60a5fa !important;
+}
+
+html.dark .border-\[\#ececec\],
+html.dark .border-\[\#c1c6d6\],
+html.dark .border-gray-200 {
+    border-color: #334155 !important;
+}
+
+html.dark .border-dashed {
+    border-color: #475569 !important;
+}
+
+/* Hovers */
+html.dark .hover\:bg-\[\#f8fafc\]:hover,
+html.dark .hover\:bg-\[\#f3f4f5\]:hover,
+html.dark .hover\:bg-gray-50:hover {
+    background-color: #334155 !important;
+}
+
+html.dark .hover\:bg-\[\#ececec\]:hover,
+html.dark .hover\:bg-\[\#e5e7eb\]:hover,
+html.dark .hover\:bg-\[\#e1e3e4\]:hover,
+html.dark .hover\:bg-\[\#e3e2e6\]:hover,
+html.dark .hover\:bg-gray-100:hover,
+html.dark .hover\:bg-gray-200:hover {
+    background-color: #475569 !important;
+}
+
+html.dark .hover\:bg-\[\#E8F0FE\]:hover {
+    background-color: rgba(30, 58, 138, 0.6) !important;
+}
+
+html.dark .hover\:bg-\[\#d8e8fd\]:hover {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+}
+
+html.dark .hover\:text-\[\#1A73E8\]:hover,
+html.dark .group-hover\:text-\[\#1A73E8\]:hover {
+    color: #93c5fd !important;
+}
+
+/* Sidebar Specific */
+html.dark nav a {
+    color: #cbd5e1;
+}
+
+html.dark nav a:hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Group hovers */
+html.dark .group:hover {
+    border-color: #475569 !important;
+}

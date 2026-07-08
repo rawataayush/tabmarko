@@ -1,8 +1,9 @@
-const ViewSwitcher = () => {
+const ViewSwitcher = ({ viewMode, setViewMode }) => {
     return (
         <div className='flex overflow-hidden rounded-lg border border-[#c1c6d6]'>
             <button
-                className='bg-[#1A73E8] px-3 py-2 text-white transition'
+                onClick={() => setViewMode('list')}
+                className={`px-3 py-2 transition ${viewMode === 'list' ? 'bg-[#1A73E8] text-white' : 'bg-white text-[#414754] hover:bg-[#f3f4f5]'}`}
                 title='List View'
             >
                 <span className='material-symbols-outlined'>
@@ -11,14 +12,14 @@ const ViewSwitcher = () => {
             </button>
 
             <button
-                className='bg-white px-3 py-2 text-[#414754] transition hover:bg-[#f3f4f5]'
+                onClick={() => setViewMode('grid')}
+                className={`px-3 py-2 transition ${viewMode === 'grid' ? 'bg-[#1A73E8] text-white' : 'bg-white text-[#414754] hover:bg-[#f3f4f5]'}`}
                 title='Grid View'
             >
                 <span className='material-symbols-outlined'>
                     grid_view
                 </span>
             </button>
-
         </div>
     )
 }

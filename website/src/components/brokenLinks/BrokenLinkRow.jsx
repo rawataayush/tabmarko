@@ -6,7 +6,7 @@ const statusColors = {
     "DNS Resolution": "bg-gray-200 text-gray-700",
 };
 
-const BrokenLinkRow = ({link}) => {
+const BrokenLinkRow = ({link, onDelete}) => {
     return (
         <div className="group grid grid-cols-12 items-center gap-4 border-b border-[#ececec] px-6 py-4 transition hover:bg-[#f8fafc]">
             {/* Bookmark */}
@@ -15,11 +15,11 @@ const BrokenLinkRow = ({link}) => {
                 <div
                     className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded text-white"
                     style={{
-                        backgroundColor: link.color,
+                        backgroundColor: link.color || '#1A73E8',
                     }}
                 >
                     <span className="material-symbols-outlined text-[18px]">
-                        {link.icon}
+                        {link.icon || 'link_off'}
                     </span>
                 </div>
 
@@ -30,6 +30,8 @@ const BrokenLinkRow = ({link}) => {
 
                     <a
                         href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
                         className="mt-1 block truncate text-sm text-[#6b7280] hover:text-[#1A73E8]"
                     >
                         {link.url}
@@ -39,13 +41,13 @@ const BrokenLinkRow = ({link}) => {
 
                     <div className="mt-2 flex items-center gap-2 md:hidden">
                         <span
-                            className={`rounded-full px-2 py-1 text-[11px] font-medium ${statusColors[link.status]}`}
+                            className={`rounded-full px-2 py-1 text-[11px] font-medium ${statusColors[link.status] || statusColors["DNS Resolution"]}`}
                         >
                             {link.status}
                         </span>
 
                         <span className="text-xs text-[#6b7280]">
-                            {link.checked}
+                            {link.checked || 'Just now'}
                         </span>
                     </div>
                 </div>
@@ -55,7 +57,7 @@ const BrokenLinkRow = ({link}) => {
 
             <div className="hidden md:block md:col-span-3">
                 <span
-                    className={`rounded-full px-3 py-1 text-xs font-medium ${statusColors[link.status]}`}
+                    className={`rounded-full px-3 py-1 text-xs font-medium ${statusColors[link.status] || statusColors["DNS Resolution"]}`}
                 >
                     {link.status}
                 </span>
@@ -65,9 +67,9 @@ const BrokenLinkRow = ({link}) => {
 
             <div className="hidden items-center justify-end md:flex md:col-span-3">
                 <span className="mr-4 text-sm text-[#6b7280] group-hover:hidden">
-                    {link.checked}
+                    {link.checked || 'Just now'}
                 </span>
-                <BrokenLinkActions />
+                <BrokenLinkActions onDelete={() => onDelete(link.id)} />
             </div>
 
             {/* Mobile Buttons */}
@@ -77,7 +79,10 @@ const BrokenLinkRow = ({link}) => {
                     Edit URL
                 </button>
 
-                <button className="rounded bg-red-500 px-3 py-1.5 text-sm text-white">
+                <button 
+                    onClick={() => onDelete(link.id)}
+                    className="rounded bg-red-500 px-3 py-1.5 text-sm text-white"
+                >
                     Delete
                 </button>
             </div>

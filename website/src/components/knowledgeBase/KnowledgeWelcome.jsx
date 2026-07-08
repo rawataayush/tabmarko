@@ -1,6 +1,6 @@
 import SuggestionGrid from './SuggestionGrid';
 
-const KnowledgeWelcome = () => {
+const KnowledgeWelcome = ({ onPromptSelect }) => {
     return (
         <div className='flex flex-col items-center px-6 pt-8 text-center lg:h-full lg:justify-center'>
                 <div className='mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E8F0FE]'>
@@ -19,7 +19,7 @@ const KnowledgeWelcome = () => {
                 </p>
 
                 <div className='w-full max-w-5xl'>
-                    <SuggestionGrid />
+                    <SuggestionGrid onSelect={onPromptSelect} />
                 </div>
         </div>
     )

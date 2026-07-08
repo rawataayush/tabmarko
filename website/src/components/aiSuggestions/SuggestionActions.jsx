@@ -1,7 +1,8 @@
-const SuggestionActions = () => {
+const SuggestionActions = ({ onApply, onDismiss }) => {
     return (
         <div className='mt-auto flex gap-3 border-t border-[#ececec] pt-4'>
             <button
+                onClick={onApply}
                 className='
                 flex-1
                 rounded-lg
@@ -17,6 +18,7 @@ const SuggestionActions = () => {
             </button>
 
             <button
+                onClick={onDismiss}
                 className='
                 flex-1
                 rounded-lg

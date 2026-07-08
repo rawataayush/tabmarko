@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const CollectionCard = ({ collection }) => {
     return (
         <div className='group relative flex flex-col overflow-hidden rounded-xl border border-[#c1c6d6] bg-white p-6 transition hover:shadow-md'>
@@ -47,13 +49,16 @@ const CollectionCard = ({ collection }) => {
             </div>
 
             <div className='relative z-10 mt-auto border-t border-[#ececec] pt-4'>
-                <button className='flex w-full items-center justify-center gap-2 rounded-lg bg-[#f3f4f5] px-4 py-2 transition hover:bg-[#e5e7eb]'>
+                <Link 
+                    to={`/dashboard/collections/${encodeURIComponent(collection.title)}`}
+                    className='flex w-full items-center justify-center gap-2 rounded-lg bg-[#f3f4f5] px-4 py-2 transition hover:bg-[#e5e7eb]'
+                >
                     Open Collection
 
                     <span className='material-symbols-outlined text-[18px]'>
                         arrow_forward
                     </span>
-                </button>
+                </Link>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import BookmarkActions from './BookmarkActions';
 
-const BookmarkRow = ({ bookmark }) => {
+const BookmarkRow = ({ bookmark, onDelete }) => {
     return (
         <div className='grid grid-cols-[minmax(0,4fr)_160px_140px_120px] items-center gap-6 rounded-xl border border-[#c1c6d6] bg-white p-4 transition hover:shadow-sm'>
 
@@ -52,7 +52,7 @@ const BookmarkRow = ({ bookmark }) => {
 
             {/* Actions */}
             <div className='justify-self-end'>
-                <BookmarkActions />
+                <BookmarkActions bookmark={bookmark} onDelete={onDelete} />
             </div>
 
         </div>

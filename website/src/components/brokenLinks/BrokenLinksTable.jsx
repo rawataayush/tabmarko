@@ -1,6 +1,6 @@
 import BrokenLinkRow from './BrokenLinkRow';
 
-const BrokenLinksTable = ({brokenLinks}) => {
+const BrokenLinksTable = ({brokenLinks, onDelete}) => {
     return (
         <div className="flex h-full flex-col overflow-hidden rounded-xl border border-[#c1c6d6] bg-white shadow-sm">
             {/* Header */}
@@ -25,6 +25,7 @@ const BrokenLinksTable = ({brokenLinks}) => {
                         <BrokenLinkRow
                             key={link.id}
                             link={link}
+                            onDelete={onDelete}
                         />
                     ))}
                 </div>

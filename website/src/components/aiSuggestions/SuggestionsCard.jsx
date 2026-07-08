@@ -1,6 +1,6 @@
 import SuggestionActions from './SuggestionActions';
 
-const SuggestionsCard = ({suggestion}) => {
+const SuggestionsCard = ({ suggestion, onApply, onDismiss }) => {
     return (
         <div className='flex flex-col rounded-xl border border-[#c1c6d6] bg-white p-6 transition hover:border-[#1a73e8] hover:shadow-md'>
             <div className='mb-5 flex items-start justify-between'>
@@ -27,7 +27,7 @@ const SuggestionsCard = ({suggestion}) => {
                 </p>
             </div>
 
-            <SuggestionActions />
+            <SuggestionActions onApply={onApply} onDismiss={onDismiss} />
         </div>
     )
 }

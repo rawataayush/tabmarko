@@ -1,7 +1,7 @@
 import DuplicateItem from './DuplicateItem';
 import DuplicateActions from './DuplicateActions';
 
-const DuplicateCard = ({ group }) => {
+const DuplicateCard = ({ group, onKeepBest, onRemoveDuplicate }) => {
     return (
         <div className='rounded-xl border border-[#c1c6d6] bg-white p-6'>
             <div className='mb-5 flex items-center justify-between'>
@@ -30,7 +30,10 @@ const DuplicateCard = ({ group }) => {
                 ))}
             </div>
 
-            <DuplicateActions />
+            <DuplicateActions 
+                onKeepBest={() => onKeepBest(group)} 
+                onRemoveDuplicate={() => onRemoveDuplicate(group)} 
+            />
         </div>
     )
 }

@@ -1,7 +1,7 @@
-const FilterChips = ({ filters, selectedFilter, onFilterChange }) => {
+const FilterChips = ({ filters, selectedFilter, onFilterChange, children }) => {
 
     return (
-        <div className='flex flex-wrap gap-3'>
+        <div className='flex flex-wrap gap-3 items-center'>
             {filters.map((filter) => (
                 <button
                     key={filter.value}
@@ -16,6 +16,7 @@ const FilterChips = ({ filters, selectedFilter, onFilterChange }) => {
                         {filter.label}
                     </button>
             ))}
+            {children}
         </div>
     )
 }

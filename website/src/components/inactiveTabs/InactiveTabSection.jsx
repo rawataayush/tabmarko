@@ -1,6 +1,6 @@
 import InactiveTabRow from './InactiveTabRow';
 
-const InactiveTabSection = ({section}) => {
+const InactiveTabSection = ({section, onArchive, onDismiss, onArchiveSection}) => {
     return (
         <section>
             {/* Section Header */}
@@ -15,8 +15,11 @@ const InactiveTabSection = ({section}) => {
                     {section.title}
                 </h3>
 
-                <button className='text-sm font-medium text-[#6b7280] transition hover-text-[#1a73e8]'>
-                    Select All
+                <button 
+                    onClick={onArchiveSection}
+                    className='text-sm font-medium text-[#6b7280] transition hover-text-[#1a73e8]'
+                >
+                    Archive All
                 </button>
             </div>
 
@@ -26,6 +29,8 @@ const InactiveTabSection = ({section}) => {
                     <InactiveTabRow
                         key={tab.id}
                         tab={tab}
+                        onArchive={onArchive}
+                        onDismiss={onDismiss}
                     />
                 ))}
             </div>

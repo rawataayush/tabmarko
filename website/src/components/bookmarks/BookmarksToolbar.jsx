@@ -1,8 +1,9 @@
 import BookmarkFilters from './BookmarkFilters';
 import SortControls from './SortControls';
 import ViewSwitcher from './ViewSwitcher';
+import BookmarkSearch from './BookmarkSearch';
 
-const BookmarksToolbar = ({selectedFilter, setSelectedFilter}) => {
+const BookmarksToolbar = ({selectedFilter, setSelectedFilter, onSearch, isSearching, viewMode, setViewMode, categories}) => {
     return (
         <section className='mb-8'>
             <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -23,8 +24,9 @@ const BookmarksToolbar = ({selectedFilter, setSelectedFilter}) => {
 
                 {/* Right */}
                 <div className="flex flex-wrap items-center gap-3">
+                    <BookmarkSearch onSearch={onSearch} isSearching={isSearching} />
                     <SortControls />
-                    <ViewSwitcher />
+                    <ViewSwitcher viewMode={viewMode} setViewMode={setViewMode} />
                 </div>
             </div>
 
@@ -32,6 +34,7 @@ const BookmarksToolbar = ({selectedFilter, setSelectedFilter}) => {
             <BookmarkFilters 
                 selectedFilter={selectedFilter}
                 setSelectedFilter={setSelectedFilter}
+                categories={categories}
             />
         </section>
     )

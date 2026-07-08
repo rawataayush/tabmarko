@@ -1,4 +1,4 @@
-const BrokenLinkActions = () => {
+const BrokenLinkActions = ({ onDelete }) => {
     return (
         <>
             <div
@@ -26,6 +26,7 @@ const BrokenLinkActions = () => {
     </button>
 
     <button
+        onClick={onDelete}
         title="Delete"
         className="ml-1 rounded p-1.5 text-red-500 transition hover:bg-red-100"
     >
@@ -63,6 +64,7 @@ const BrokenLinkActions = () => {
     </button>
 
     <button
+        onClick={onDelete}
         title="Delete"
         className="ml-1 rounded p-1.5 text-red-500 transition hover:bg-red-100"
     >
@@ -75,4 +77,4 @@ const BrokenLinkActions = () => {
             )
 }
 
-            export default BrokenLinkActions;
+export default BrokenLinkActions;

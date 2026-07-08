@@ -1,4 +1,4 @@
-const InactiveTabsHeader = () => {
+const InactiveTabsHeader = ({ onArchiveAll30, count30 }) => {
     return (
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -12,15 +12,18 @@ const InactiveTabsHeader = () => {
                 </p>
             </div>
 
-            <button
-                className="flex items-center justify-center gap-2 rounded-lg bg-[#E8F0FE] px-5 py-3 font-medium text-[#1A73E8] transition hover:bg-[#d8e8fd]"
-            >
-                <span className="material-symbols-outlined text-[18px]">
-                    done_all
-                </span>
+            {count30 > 0 && (
+                <button
+                    onClick={onArchiveAll30}
+                    className="flex items-center justify-center gap-2 rounded-lg bg-[#E8F0FE] px-5 py-3 font-medium text-[#1A73E8] transition hover:bg-[#d8e8fd]"
+                >
+                    <span className="material-symbols-outlined text-[18px]">
+                        done_all
+                    </span>
 
-                Archive All Older Than 30 Days
-            </button>
+                    Archive All Older Than 30 Days
+                </button>
+            )}
         </div>
     )
 }

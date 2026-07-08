@@ -1,8 +1,9 @@
-import React from 'react'
-
-const CollectionCard = ({ icon, name, items}) => {
+const CollectionCard = ({ icon, name, items, onClick }) => {
     return (
-        <div className='flex cursor-pointer flex-col gap-3 rounded-xl border border-[#c1c6d6] bg-[#ffffff] p-4 transition-colors hover:border-[#727785]'>
+        <div 
+            onClick={onClick}
+            className='flex cursor-pointer flex-col gap-3 rounded-xl border border-[#c1c6d6] bg-[#ffffff] p-4 transition-colors hover:border-[#727785]'
+        >
             <div className='flex items-center gap-3'>
                 <div className='flex h-10 w-10 items-center justify-center rounded-lg bg-[#d8e2ff] text-[#001a41]'>
                     <span className='material-symbols-outlined'>

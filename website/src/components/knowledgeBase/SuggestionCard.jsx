@@ -1,6 +1,10 @@
-const SuggestionCard = ({ suggestion }) => {
+const SuggestionCard = ({ suggestion, onSelect }) => {
     return (
-        <button className='group h-full flex flex-col gap-2 rounded-xl border border-[#c1c6d6] bg-white p-5 text-left transition-colors hover:border-[#1a73e8]/40 hover:shadow-sm hover:bg-[#f3f4f5]'>
+        <button
+            type='button'
+            onClick={() => onSelect?.(suggestion.title)}
+            className='group h-full flex flex-col gap-2 rounded-xl border border-[#c1c6d6] bg-white p-5 text-left transition-colors hover:border-[#1a73e8]/40 hover:shadow-sm hover:bg-[#f3f4f5]'
+        >
             <span className='flex items-center gap-1 text-sm font-medium'
                 style={{ color: suggestion.color }}
             >
